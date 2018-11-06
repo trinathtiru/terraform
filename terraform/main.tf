@@ -47,4 +47,3 @@ resource "aws_instance" "web" {
       "sudo apt-get install ansible -y"
          ]
   }
-}
