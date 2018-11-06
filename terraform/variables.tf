@@ -11,3 +11,9 @@ variable "secret" {
     default = "string"
   
 }
+
+variable "vpcid" {
+  default = "vpc-06a9507f"
+}
+
+variable "privatekeypath" {}
