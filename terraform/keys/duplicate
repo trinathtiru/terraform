@@ -1,0 +1,15 @@
+
+ connection {
+    user        = "ubuntu"
+    private_key = "${file(var.privatekeypath)}"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get update",
+      "sudo apt-get install software-properties-common -y",
+      "sudo apt-repository ppa:ansible/ansible -y",
+      "sudo apt-get update",
+      "sudo apt-get install ansible -y"
+         ]
+  }

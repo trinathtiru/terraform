@@ -13,7 +13,7 @@ variable "secret" {
 }
 
 variable "vpcid" {
-  default = "vpc-06a9507f"
+  default = "vpc-dba092b3"
 }
 
 variable "privatekeypath" {}
