@@ -29,5 +29,20 @@ resource "aws_instance" "web" {
     instance_type = "t2.micro"
     key_name = "job2mon"
     security_groups = ["${aws_security_group.allow_all.name}"]
+    
+connection {
+    user = "ubuntu"
+    private_key = "${file(var.privatekeypath)}"
+
+ provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get update",
+      "sudo apt-get install software-properties-common -y",
+      "sudo apt-repository ppa:ansible/ansible -y",
+      "sudo apt-get update",
+      "sudo apt-get install ansible -y"
+         ]
+     }
+  }    
  
 }
